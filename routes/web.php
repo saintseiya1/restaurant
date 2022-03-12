@@ -17,12 +17,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/app', function () {
-    return view('test');
-});
-
 Route::get('/menu', function () {
     return view('menu/index');
+});
+
+Route::get('/about', function () {
+    return view('pages/about');
 });
 
 Route::get('/waitlist', function () {
