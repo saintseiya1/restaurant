@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import "reset";
+@import "bootstrap.min.css";
 @import "home";
 @import "pages/about";
-@import "bootstrap.min.css";
-
+@import "pages/waitlist";
+@import "pages/offers";
+@import "menu/index";
 
 body {
     line-height: 1;
@@ -147,7 +149,7 @@ body {
         /* Chrome10-25,Safari5.1-6 */
         background: radial-gradient(ellipse at center, #ed4852 0%, #9c1b24 100%);
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        overflow: hidden;
+        // overflow: hidden;
     }
 }
 
@@ -522,6 +524,11 @@ h2 {
             }
         }
     }
+}
+
+.content-box {
+    background: white;
+    padding: 20px;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {}

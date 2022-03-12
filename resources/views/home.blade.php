@@ -31,8 +31,8 @@
         <div class="circle-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
       </a>
     </div>
-  </section>
-  <section id="food-preview">
+</section>
+<section id="food-preview">
     <h2>We have everything you need to kill your hunger</h2>
     <div class="button-rounded">View Our Menu</div>
     <div class="container">
@@ -173,6 +173,5 @@
         </div>
       </div>
     </div>
-
 </section>
 @endsection
