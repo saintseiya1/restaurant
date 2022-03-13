@@ -6,6 +6,7 @@
 @import "pages/waitlist";
 @import "pages/offers";
 @import "menu/index";
+@import "menu/single-menu";
 
 body {
     line-height: 1;
@@ -51,7 +52,7 @@ body {
         background: white;
         padding: 50px;
         height: 100vh;
-        width: 300px;
+        width: 200px;
 
         .logo {
             display: flex;
@@ -128,7 +129,7 @@ body {
             .phone-number {
                 a {
                     color: #0971ce;
-                    font-size: 2rem;
+                    font-size: 1rem;
                     font-weight: 700;
                     text-decoration: none;
                 }
@@ -137,9 +138,9 @@ body {
     }
 
     #content-section {
-        transform: translate3d(300px, 0, 0);
+        transform: translate3d(200px, 0, 0);
 
-        max-width: calc(100vw - 300px);
+        max-width: calc(100vw - 200px);
 
         background: #ed4852;
         /* Old browsers */
@@ -348,7 +349,7 @@ body {
                 }
 
                 .food-description {
-                    font-size: .8rem;
+                    font-size: 0.8rem;
                     font-weight: 400;
                     line-height: 1.8;
                     margin-bottom: 3rem;
@@ -533,4 +534,26 @@ h2 {
 
 @media (min-width: 992px) and (max-width: 1199px) {}
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    #app-layout {
+        display: grid;
+        // grid-template-columns: 350px 1fr;
+        width: 100%;
+        height: 100vh;
+
+
+        .side-menu {
+            position: absolute;
+            background: white;
+            padding: 50px;
+            height: 100vh;
+            width: 200px;
+        }
+
+        .welcome-jumbo {
+            transform: translate3d(200px, 0, 0);
+
+            max-width: calc(100vw - 200px);
+        }
+    }
+}
