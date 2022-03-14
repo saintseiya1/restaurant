@@ -25,6 +25,14 @@ Route::get('/admin/food-categories', function () {
     return view('/admin/food-categories/all');
 });
 
+Route::get('/admin/food-categories/create', function () {
+    return view('/admin/food-categories/create');
+});
+
+Route::get('/admin/food-categories/{id}/edit', function () {
+    return view('/admin/food-categories/edit');
+});
+
 Route::get('/admin/register', function () {
     return view('admin/register');
 });
