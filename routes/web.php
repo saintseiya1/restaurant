@@ -42,12 +42,6 @@ Route::get('/admin/food-categories/create',
 Route::get('/admin/food-categories/{id}/edit',
 'App\Http\Controllers\admin\FoodCategoriesController@edit');
 
-// Admin Customers
-Route::get('/admin/offers-members',
-'App\Http\Controllers\admin\CustomersController@allOffersMembers');
-Route::get('/admin/reservations',
-'App\Http\Controllers\admin\CustomersController@allReservations');
-
 // Admin Food Items
 Route::get('/admin/food-items',
 'App\Http\Controllers\admin\FoodItemsController@index');
@@ -55,6 +49,20 @@ Route::get('/admin/food-items/create',
 'App\Http\Controllers\admin\FoodItemsController@create');
 Route::get('/admin/food-items/{id}/edit',
 'App\Http\Controllers\admin\FoodItemsController@edit');
+
+// Admin Users
+Route::get('/admin/users',
+'App\Http\Controllers\admin\UsersController@index');
+Route::get('/admin/users/create',
+'App\Http\Controllers\admin\UsersController@create');
+Route::get('/admin/users/{id}/edit',
+'App\Http\Controllers\admin\UsersController@edit');
+
+// Admin Customers
+Route::get('/admin/offers-members',
+'App\Http\Controllers\admin\CustomersController@allOffersMembers');
+Route::get('/admin/reservations',
+'App\Http\Controllers\admin\CustomersController@allReservations');
 
 // Admin Authentication
 Route::get('/admin/register', function () {
