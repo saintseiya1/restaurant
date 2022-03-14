@@ -14,12 +14,16 @@
           <a href="/about">About Us</a>
         </li>
         <li>
-          <a href="/waitlist">Waitlist</a>
+          <a href="/reservations">Reservations</a>
         </li>
         <li>
-          <a href="/offers">Offers</a>
+            <a href="/offers">Offers</a>
         </li>
-      </ul>
+        <li>
+            <a href="/contact">Contact</a>
+        </li>
+
+        </ul>
     </div>
     <div class="social-icons">
       <a href="#">

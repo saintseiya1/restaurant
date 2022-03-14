@@ -9,6 +9,17 @@
 
                     <form>
                         <div class="mb-3">
+                            <label for="firstnameinput" class="form-label">First Name</label>
+                            <input type="email" class="form-control" id="firstnameinput"
+                                name="fname" placeholder="John">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastnameinput" class="form-label">Last Name</label>
+                            <input type="email" class="form-control" id="lastnameinput"
+                                name="lname" placeholder="Doe">
+                        </div>
+
+                        <div class="mb-3">
                           <label for="emailinput" class="form-label">Email address</label>
                           <input type="email" class="form-control" id="emailinput"
                             name="email" placeholder="name@example.com">

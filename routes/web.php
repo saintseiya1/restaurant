@@ -22,8 +22,8 @@ Route::get('/menu/{slug}',
 'App\Http\Controllers\StaticPagesController@singleMenu');
 Route::get('/about',
 'App\Http\Controllers\StaticPagesController@about');
-Route::get('/waitlist',
-'App\Http\Controllers\StaticPagesController@waitlist');
+Route::get('/reservations',
+'App\Http\Controllers\StaticPagesController@reservations');
 Route::get('/contact',
 'App\Http\Controllers\StaticPagesController@contact');
 Route::get('/offers',
@@ -41,6 +41,12 @@ Route::get('/admin/food-categories/create',
 'App\Http\Controllers\admin\FoodCategoriesController@create');
 Route::get('/admin/food-categories/{id}/edit',
 'App\Http\Controllers\admin\FoodCategoriesController@edit');
+
+// Admin Customers
+Route::get('/admin/offers-members',
+'App\Http\Controllers\admin\CustomersController@allOffersMembers');
+Route::get('/admin/reservations',
+'App\Http\Controllers\admin\CustomersController@allReservations');
 
 // Admin Food Items
 Route::get('/admin/food-items',
