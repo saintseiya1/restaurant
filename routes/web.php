@@ -73,6 +73,9 @@ Route::get('/admin/login', function () {
     return view('admin/login');
 });
 
+Route::get('/auth/register', function () {
+    return view('/auth/register');
+});
 
 
 Auth::routes();
