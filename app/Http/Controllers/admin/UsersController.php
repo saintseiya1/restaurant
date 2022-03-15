@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
@@ -17,7 +18,10 @@ class UsersController extends Controller
     }
 
     public function index() {
-        return view('admin/users/all');
+        $users = User::paginate(3);
+        return view('admin/users/all', [
+            'users' => $users
+        ]);
     }
 
     public function create() {
