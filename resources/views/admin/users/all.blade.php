@@ -56,10 +56,22 @@
                                                             <i class="far fa-edit"></i>
                                                         </a>
                                                     </td>
-                                                    <td><a href="/admin/users/{{ $user->id }}/delete"
+                                                    <td>
+                                                        {{-- <a href="/admin/users/{{ $user->id }}/delete"
                                                         onclick="if (! confirm('Are you sure you want to delete?')) return false;">
                                                             <i class="fa fa-trash"></i>
+                                                        </a> --}}
+
+                                                        <a href="#"
+                                                            onclick="event.preventDefault();
+                                                                document.getElementById('delete-user-{{ $user->id }}').submit();">
+                                                                <i class="far fa-trash-alt"></i>
                                                         </a>
+                                                    <form id="delete-user-{{ $user->id }}" action="/admin/users/{{ $user->id }}/delete"
+                                                        method="POST" class="d-none">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -73,10 +85,7 @@
                         <!-- end basic table -->
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
-
                     </div>
-
-
             </div>
 
 @endsection

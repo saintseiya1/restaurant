@@ -140,17 +140,9 @@
                                                 document.getElementById('logout-form').submit();">
                                                 <i class="fas fa-power-off mr-2"></i>Logout
                                 </a>
-
-
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                >
-                                    {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
 
                                 {{-- @guest
                                     @if (Route::has('login'))

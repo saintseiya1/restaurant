@@ -59,6 +59,10 @@ Route::post('/admin/users',
 'App\Http\Controllers\admin\UsersController@store');
 Route::get('/admin/users/{id}/edit',
 'App\Http\Controllers\admin\UsersController@edit');
+Route::put('/admin/users/{id}',
+'App\Http\Controllers\admin\UsersController@update');
+Route::delete('/admin/users/{id}/delete',
+'App\Http\Controllers\admin\UsersController@delete');
 
 // Admin Customers
 Route::get('/admin/offers-members',

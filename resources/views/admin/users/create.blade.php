@@ -33,8 +33,7 @@
             <h5 class="card-header">Create a New User</h5>
             <div class="card-body">
                 <form method="POST" action="/admin/users">
-                    {{-- <form method="POST" action="{{ route('register') }}"> --}}
-                        @csrf
+                    @csrf
 
                     <div class="form-group">
                         <label for="inputfirstname">First Name</label>
