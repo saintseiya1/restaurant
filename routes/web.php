@@ -55,6 +55,8 @@ Route::get('/admin/users',
 'App\Http\Controllers\admin\UsersController@index');
 Route::get('/admin/users/create',
 'App\Http\Controllers\admin\UsersController@create');
+Route::post('/admin/users',
+'App\Http\Controllers\admin\UsersController@store');
 Route::get('/admin/users/{id}/edit',
 'App\Http\Controllers\admin\UsersController@edit');
 
