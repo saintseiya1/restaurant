@@ -78,8 +78,11 @@ Route::delete('/admin/users/{id}/delete',
 'App\Http\Controllers\admin\UsersController@delete');
 
 // Admin Customers
-Route::get('/admin/offers-members',
-'App\Http\Controllers\admin\CustomersController@allOffersMembers');
+// Admin Members
+Route::get('/admin/members',
+'App\Http\Controllers\admin\MemberController@index');
+
+// Admin Reservations
 Route::get('/admin/reservations',
 'App\Http\Controllers\admin\CustomersController@allReservations');
 
