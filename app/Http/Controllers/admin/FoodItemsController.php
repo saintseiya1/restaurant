@@ -15,7 +15,7 @@ class FoodItemsController extends Controller
     }
 
     public function index() {
-        $items = FoodItem::paginate(3);
+        $items = FoodItem::paginate(5);
 
         return view('admin/food-items/all', [
             'items' => $items
@@ -62,8 +62,7 @@ class FoodItemsController extends Controller
         request()->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
-            'image_url' => ['string'],
-            'price' => ['required', 'integer'],
+            'price' => ['required'],
             'category_id' => ['required', 'integer']
         ]);
 

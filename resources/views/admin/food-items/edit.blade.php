@@ -27,19 +27,12 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
 <div class="row">
     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <div class="card">
             <h5 class="card-header">Edit this item</h5>
             <div class="card-body">
-                <form method="POST" action="/admin/food-items">
+                <form method="POST" action="/admin/food-items/{{ $item->id }}">
                     @csrf
                     @method('PUT')
 
@@ -47,7 +40,7 @@
                         <label for="inputtitle">Title</label>
                         <input id="inputtitle" type="text"
                         class="form-control form-control-lg @error('title') is-invalid @enderror"
-                        name="title" value="{{ old('title') }}" required
+                        name="title" value="{{ old('title', $item->title) }}" required
                         autocomplete="title" placeholder="Give item a Title" autofocus>
 
                         @error('title')
@@ -61,7 +54,7 @@
                         <label for="inputprice">Price</label>
                         <input id="inputprice" type="text"
                         class="form-control form-control-lg @error('price') is-invalid @enderror"
-                        name="price" value="{{ old('price') }}" required
+                        name="price" value="{{ old('price', $item->price) }}" required
                         autocomplete="price" placeholder="Give item a price" autofocus>
 
                         @error('price')
@@ -76,6 +69,9 @@
                         <select name="category_id" class="form-control" id="inputcategory">
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}"
+                                @if ($category->id == $item->category_id)
+                                    @selected
+                                @endif
                                 >{{ $category->title }}</option>
                             @endforeach
                         </select>
@@ -85,7 +81,7 @@
                         <label for="inputimageurl">Image Url</label>
                         <input id="inputimageurl" type="text"
                         class="form-control form-control-lg @error('image_url') is-invalid @enderror"
-                        name="image_url" value="{{ old('image_url') }}"
+                        name="image_url" value="{{ old('image_url', $item->image_url) }}"
                         autocomplete="title" placeholder="Add the url to the item image" autofocus>
 
                         @error('image_url')
@@ -100,7 +96,7 @@
                         <textarea id="inputdescription" type="text"
                             class="form-control form-control-lg @error('description') is-invalid @enderror"
                             name="description" required autofocus
-                            placeholder="Write a Description">{{ old('description') }}</textarea>
+                            placeholder="Write a Description">{{ old('description', $item->description) }}</textarea>
 
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
