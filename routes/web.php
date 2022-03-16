@@ -28,6 +28,10 @@ Route::get('/contact',
 'App\Http\Controllers\StaticPagesController@contact');
 Route::get('/offers',
 'App\Http\Controllers\StaticPagesController@offers');
+Route::post('/offers',
+'App\Http\Controllers\StaticPagesController@registerMember');
+Route::get('/offers/thank-you',
+'App\Http\Controllers\StaticPagesController@offersThankYou');
 
 // Admin Dashboard
 Route::get('/admin',
