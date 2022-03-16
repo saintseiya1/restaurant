@@ -54,17 +54,14 @@
                                                     <td>{{ $member->email }}</td>
                                                     <td>{{ $member->phone_number }}</td>
                                                     <td>{{ date('m/d/Y', strtotime($member->updated_at)) }}</td>
-                                                    <td><a href="/admin/food-categories/{{ $member->id }}/edit">
-                                                            <i class="far fa-edit"></i>
-                                                        </a>
-                                                    </td>
+
                                                     <td>
                                                         <a href="#"
                                                             onclick="event.preventDefault();
-                                                                document.getElementById('delete-category-{{ $member->id }}').submit();">
+                                                                document.getElementById('delete-member-{{ $member->id }}').submit();">
                                                                 <i class="far fa-trash-alt"></i>
                                                         </a>
-                                                        <form id="delete-category-{{ $member->id }}" action="/admin/food-categories/{{ $member->id }}/delete"
+                                                        <form id="delete-member-{{ $member->id }}" action="/admin/members/{{ $member->id }}/delete"
                                                             method="POST" class="d-none">
                                                             @csrf
                                                             @method('DELETE')
@@ -74,6 +71,8 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    {{ $members->links() }}
+
                                 </div>
                             </div>
                         </div>
