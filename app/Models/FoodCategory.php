@@ -9,6 +9,13 @@ class FoodCategory extends Model
 {
     use HasFactory;
     protected $table = 'food_categories';
+
+    protected $fillable = [
+        'title',
+        'description',
+        'image_url'
+    ];
+
     public function food_items() {
         return $this->hasMany('App\Models\FoodItem', 'category_id');
     }
