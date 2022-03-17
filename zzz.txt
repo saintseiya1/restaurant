@@ -1,0 +1,17 @@
+// General Settings
+site title
+logo image url
+business address
+address 1
+address 2
+city
+state
+phone number 
+
+//seo
+description and keywords
+
+// social media
+facebook url 
+instagram url 
+twitter url 

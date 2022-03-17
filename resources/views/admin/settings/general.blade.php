@@ -8,17 +8,17 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">New Food Category</h2>
+                    <h2 class="pageheader-title">Edit General Settings</h2>
                     <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/admin"
-                                    class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="/admin/food-categories"
-                                    class="breadcrumb-link">All Food Categories</a></li>
+                                    class="breadcrumb-link">Dashboard</a>
+                                </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    New Food Category</li>
+                                    Edit General Settings
+                                </li>
                             </ol>
                         </nav>
                     </div>
@@ -30,19 +30,20 @@
 <div class="row">
     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <div class="card">
-            <h5 class="card-header">Create a New Category</h5>
+            <h5 class="card-header">Edit General Settings</h5>
             <div class="card-body">
-                <form method="POST" action="/admin/food-categories">
+                <form method="POST" action="/admin/settings/general">
                     @csrf
+                    @method('PUT')
 
                     <div class="form-group">
-                        <label for="inputtitle">Title</label>
+                        <label for="inputtitle">Business Name</label>
                         <input id="inputtitle" type="text"
-                        class="form-control form-control-lg @error('title') is-invalid @enderror"
-                        name="title" value="{{ old('title') }}" required
-                        autocomplete="title" placeholder="Give Category a Title" autofocus>
+                        class="form-control form-control-lg @error('site_title') is-invalid @enderror"
+                        name="site_title" value="{{ old('site_title', $general_setting->site_title) }}" required
+                        autocomplete="site_title" placeholder="Give general_setting a site_title" autofocus>
 
-                        @error('title')
+                        @error('site_title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -50,13 +51,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputimageurl">Image Url</label>
-                        <input id="inputimageurl" type="text"
-                        class="form-control form-control-lg @error('image_url') is-invalid @enderror"
-                        name="image_url" value="{{ old('image_url') }}" required
-                        autocomplete="title" placeholder="Add the url to the category image" autofocus>
+                        <label for="inputaddress1">address 1</label>
+                        <input id="inputaddress1" type="text"
+                        class="form-control form-control-lg @error('address_1') is-invalid @enderror"
+                        name="address_1" value="{{ old('address_1', $general_setting->address_1) }}" required
+                        autocomplete="address_1" placeholder="Add Street Address" autofocus>
 
-                        @error('image_url')
+                        @error('address_1')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -64,18 +65,78 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputdescription">Description</label>
-                        <textarea id="inputdescription" type="text"
-                            class="form-control form-control-lg @error('description') is-invalid @enderror"
-                            name="description" required autofocus
-                            placeholder="Write a Description">{{ old('description') }}</textarea>
+                        <label for="inputaddress2">address 2</label>
+                        <input id="inputaddress2" type="text"
+                        class="form-control form-control-lg @error('address_2') is-invalid @enderror"
+                        name="address_2" value="{{ old('address_2', $general_setting->address_2) }}"
+                        autocomplete="address_2" placeholder="" autofocus>
 
-                            @error('description')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                        @error('address_2')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label for="inputcity">City</label>
+                        <input id="inputcity" type="text"
+                        class="form-control form-control-lg @error('city') is-invalid @enderror"
+                        name="city" value="{{ old('city', $general_setting->city) }}" required
+                        autocomplete="city" placeholder="" autofocus>
+
+                        @error('city')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputstate">state</label>
+                        <input id="inputstate" type="text"
+                        class="form-control form-control-lg @error('state') is-invalid @enderror"
+                        name="state" value="{{ old('state', $general_setting->state) }}" required
+                        autocomplete="state" placeholder="" autofocus>
+
+                        @error('state')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputzipcode">zipcode</label>
+                        <input id="inputzipcode" type="text"
+                        class="form-control form-control-lg @error('zipcode') is-invalid @enderror"
+                        name="zipcode" value="{{ old('zipcode', $general_setting->zipcode) }}" required
+                        autocomplete="zipcode" placeholder="" autofocus>
+
+                        @error('zipcode')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputphonenumber">Phone Number</label>
+                        <input id="inputphonenumber" type="text"
+                        class="form-control form-control-lg @error('phone_number') is-invalid @enderror"
+                        name="phone_number" value="{{ old('phone_number', $general_setting->phone_number) }}" required
+                        autocomplete="phone_number" placeholder="" autofocus>
+
+                        @error('phone_number')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+
+
+
 
                     <div class="row">
                         <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">

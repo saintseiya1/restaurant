@@ -95,25 +95,22 @@ Route::delete('/admin/members/{id}/delete',
 // Admin Reservations
 Route::get('/admin/reservations',
 'App\Http\Controllers\admin\ReservationController@index');
-
-// Admin Settings
-Route::get('/admin/settings/general',
-'App\Http\Controllers\admin\SettingsController@general');
-Route::post('/admin/settings/general',
-'App\Http\Controllers\admin\UsersController@saveGeneral');
-Route::get('/admin/settings/seo',
-'App\Http\Controllers\admin\SettingsController@seo');
-Route::post('/admin/settings/seo',
-'App\Http\Controllers\admin\UsersController@saveSeo');
-Route::get('/admin/settings/social',
-'App\Http\Controllers\admin\SettingsController@social');
-Route::post('/admin/settings/social',
-'App\Http\Controllers\admin\UsersController@saveSocial');
-
-
 Route::delete('/admin/reservations/{id}/delete',
 'App\Http\Controllers\admin\ReservationController@delete');
 
+// Admin Settings
+Route::get('/admin/settings/general',
+'App\Http\Controllers\admin\SettingController@general');
+Route::put('/admin/settings/general',
+'App\Http\Controllers\admin\SettingController@saveGeneral');
+Route::get('/admin/settings/seo',
+'App\Http\Controllers\admin\SettingController@seo');
+Route::put('/admin/settings/seo',
+'App\Http\Controllers\admin\SettingController@saveSeo');
+Route::get('/admin/settings/social',
+'App\Http\Controllers\admin\SettingController@social');
+Route::put('/admin/settings/social',
+'App\Http\Controllers\admin\SettingController@saveSocial');
 
 // Admin Authentication
 Route::get('/admin/register', function () {
