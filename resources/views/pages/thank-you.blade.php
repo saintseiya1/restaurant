@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-10 offset-md-1 thank-you">
                 <h1>Thank You</h1>
-                <p>You will be notified of all the special offers we have through email</p>
+                <p>We will get back to you.</p>
             </div>
         </div>
     </div>

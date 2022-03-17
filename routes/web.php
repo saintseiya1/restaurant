@@ -24,6 +24,10 @@ Route::get('/about',
 'App\Http\Controllers\StaticPagesController@about');
 Route::get('/reservations',
 'App\Http\Controllers\StaticPagesController@reservations');
+Route::post('/reservations',
+'App\Http\Controllers\StaticPagesController@saveReservation');
+Route::get('/reservations/thank-you',
+'App\Http\Controllers\StaticPagesController@thankYou');
 Route::get('/contact',
 'App\Http\Controllers\StaticPagesController@contact');
 Route::get('/offers',
@@ -31,7 +35,7 @@ Route::get('/offers',
 Route::post('/offers',
 'App\Http\Controllers\StaticPagesController@registerMember');
 Route::get('/offers/thank-you',
-'App\Http\Controllers\StaticPagesController@offersThankYou');
+'App\Http\Controllers\StaticPagesController@thankYou');
 
 // Admin Dashboard
 Route::get('/admin',
@@ -90,7 +94,11 @@ Route::delete('/admin/members/{id}/delete',
 
 // Admin Reservations
 Route::get('/admin/reservations',
-'App\Http\Controllers\admin\CustomersController@allReservations');
+'App\Http\Controllers\admin\ReservationController@index');
+
+Route::delete('/admin/reservations/{id}/delete',
+'App\Http\Controllers\admin\ReservationController@delete');
+
 
 // Admin Authentication
 Route::get('/admin/register', function () {
