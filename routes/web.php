@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\GeneralSetting;
+use App\Models\SocialSetting;
+use App\Models\SeoSetting;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,11 +124,23 @@ Route::get('/admin/login', function () {
     return view('admin/login');
 });
 
-Route::get('/auth/register', function () {
-    return view('/auth/register');
-});
-
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home',
+[App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+View::composer(['home', 'pages/about', 'pages/contact', 'pages/offers',
+'pages/reservations', 'thank-you', 'menu/index', 'menu/single-menu'
+],
+function ($view) {
+    $general_settings = GeneralSetting::find(1);
+    $social_settings = SocialSetting::find(1);
+    $seo_settings = SeoSetting::find(1);
+
+    $view->with('settings', [
+        "general" => $general_settings,
+        "social"=> $social_settings,
+        "seo" => $seo_settings
+    ]);
+});
+

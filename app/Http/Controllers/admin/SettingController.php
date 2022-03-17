@@ -74,7 +74,7 @@ class SettingController extends Controller
 
     public function social() {
         $id = 1;
-        $social_setting = socialSetting::find($id);
+        $social_setting = SocialSetting::find($id);
 
         return view('admin/settings/social', [
             'social_setting' => $social_setting,

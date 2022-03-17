@@ -4,11 +4,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ $settings["general"]->site_title }}</title>
+        <!-- Search Engine Optimization by Rank Math - https://s.rankmath.com/home -->
+        <meta name="description"
+        content="{{ $settings["seo"]->description }}">
+        {{-- <link rel="canonical" href="https://codingphase.com/"> --}}
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ $settings["general"]->site_title }}">
+        <meta property="og:description"
+        content="{{ $settings["seo"]->description }}">
+        {{-- <meta property="og:url" content="https://codingphase.com/"> --}}
+        <meta property="og:site_name" content="{{ $settings["general"]->site_title }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ $settings["general"]->site_title }}">
+        <meta name="twitter:description"
+        content="{{ $settings["seo"]->description }}">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
