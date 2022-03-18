@@ -43,7 +43,8 @@ Route::get('/offers/thank-you',
 // Admin Dashboard
 Route::get('/admin',
 'App\Http\Controllers\admin\AdminController@dashboard');
-
+Route::get('/admin/estimated-revenue-daily',
+'App\Http\Controllers\admin\AdminController@dailyRevenueLast30');
 
 // Admin Food Categories
 Route::get('/admin/food-categories',

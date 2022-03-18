@@ -4,6 +4,7 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class RolesTableSeeder extends Seeder
 {
@@ -33,5 +34,13 @@ class RolesTableSeeder extends Seeder
             'role_id' => 2,
             'user_id' => 2
         ]);
+
+        $faker = Faker::create();
+        foreach (range(3,20) as $index) {
+            DB::table('role_user')->insert([
+                'role_id' => rand(1,2),
+                'user_id' => $index
+            ]);
+        }
     }
 }

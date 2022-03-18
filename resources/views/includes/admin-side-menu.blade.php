@@ -26,6 +26,8 @@
                         </ul>
                     </div>
                 </li>
+
+                @if (Auth::user()->isAdmin())
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                         data-target="#submenu-2"
@@ -72,6 +74,7 @@
                         </ul>
                     </div>
                 </li>
+                @endif
 
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
@@ -118,6 +121,7 @@
                     </div>
                 </li>
 
+                @if (Auth::user()->isAdmin())
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                         data-target="#submenu-4"
@@ -139,7 +143,9 @@
                         </ul>
                     </div>
                 </li>
+                @endif
 
+                @if (Auth::user()->isAdmin())
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                         data-target="#submenu-5"
@@ -163,6 +169,7 @@
                         </ul>
                     </div>
                 </li>
+                @endif
             </ul>
         </div>
     </nav>
