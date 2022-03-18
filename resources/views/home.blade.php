@@ -78,7 +78,7 @@
                 repellendus natus nihil?
               </p>
               <div class="food-image">
-                <img src="img/hamburger-and-fries-png-4.png">
+                <img src="img/hamburger.png">
               </div>
             </div>
           </div>

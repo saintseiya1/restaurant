@@ -32,7 +32,7 @@
                         <!-- ============================================================== -->
                         <!-- basic table -->
                         <!-- ============================================================== -->
-                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="col-sm-12 col-12">
                             <div class="card">
                                 <h5 class="card-header">All Reservations</h5>
                                 <div class="card-body">
@@ -52,31 +52,31 @@
                                         </thead>
                                         <tbody>
                                             @foreach($reservations as $reservation)
-                                                <tr>
-                                                    <th scope="row">{{  $reservation->id }}</th>
-                                                    <td>{{ $reservation->fname }} {{ $reservation->lname }}</td>
-                                                    <td>{{ $reservation->email }}</td>
-                                                    <td>{{ $reservation->phone_number }}</td>
-                                                    <td>{{ $reservation->guests_total}}</td>
-                                                    <td>{{ $reservation->time }}</td>
-                                                    <td>{{ date('m/d/Y', strtotime($reservation->updated_at)) }}</td>
-                                                    <td><a href="/admin/reservations/{{ $reservation->id }}/edit">
-                                                            <i class="far fa-edit"></i>
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"
-                                                            onclick="event.preventDefault();
-                                                                document.getElementById('delete-category-{{ $reservation->id }}').submit();">
-                                                                <i class="far fa-trash-alt"></i>
-                                                        </a>
-                                                        <form id="delete-category-{{ $reservation->id }}" action="/admin/reservations/{{ $reservation->id }}/delete"
-                                                            method="POST" class="d-none">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                        </form>
-                                                    </td>
-                                                </tr>
+                                            <tr>
+                                                <td scope="row">{{  $reservation->id }}</td>
+                                                <td>{{ $reservation->fname }} {{ $reservation->lname }}</td>
+                                                <td>{{ $reservation->email }}</td>
+                                                <td>{{ $reservation->phone_number }}</td>
+                                                <td>{{ $reservation->guests_total}}</td>
+                                                <td>{{ $reservation->time }}</td>
+                                                <td>{{ date('m/d/Y', strtotime($reservation->updated_at)) }}</td>
+                                                <td><a href="/admin/reservations/{{ $reservation->id }}/edit">
+                                                        <i class="far fa-edit"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        onclick="event.preventDefault();
+                                                            document.getElementById('delete-category-{{ $reservation->id }}').submit();">
+                                                            <i class="far fa-trash-alt"></i>
+                                                    </a>
+                                                    <form id="delete-category-{{ $reservation->id }}" action="/admin/reservations/{{ $reservation->id }}/delete"
+                                                        method="POST" class="d-none">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
+                                                </td>
+                                            </tr>
                                             @endforeach
                                         </tbody>
                                     </table>

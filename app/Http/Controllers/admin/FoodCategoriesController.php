@@ -8,13 +8,14 @@ use App\Models\FoodCategory;
 
 class FoodCategoriesController extends Controller
 {
+
     // public function __construct()
     // {
     //     $this->middleware('auth');
     // }
 
     public function index() {
-        $categories = FoodCategory::paginate(3);
+        $categories = FoodCategory::paginate(5);
 
         return view('admin/food-categories/all', [
             'categories' => $categories

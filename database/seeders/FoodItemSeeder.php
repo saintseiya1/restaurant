@@ -45,5 +45,55 @@ class FoodItemSeeder extends Seeder
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
+
+        DB::table('food_items')->insert([
+            'title' => 'Chicken Wings',
+            'description' => 'Finger lickin good chicken',
+            'image_url' => '/img/cupcake.png',
+            'price' => 9.99,
+            'category_id' => 1,
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_items')->insert([
+            'title' => 'Baby Back Ribs',
+            'description' => 'Plate of ribs',
+            'image_url' => '/img/cupcake.png',
+            'price' => 9.99,
+            'category_id' => 3,
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_items')->insert([
+            'title' => 'Cesar Salad',
+            'description' => 'Lettuce, tomato, and cheese',
+            'image_url' => '/img/cupcake.png',
+            'price' => 9.99,
+            'category_id' => 4,
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_items')->insert([
+            'title' => 'Cupcakes',
+            'description' => 'Delicious cupcakes',
+            'image_url' => '/img/cupcake.png',
+            'price' => 9.99,
+            'category_id' => 5,
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_items')->insert([
+            'title' => 'Coca Cola',
+            'description' => 'Delicious cupcakes',
+            'image_url' => '/img/cupcake.png',
+            'price' => 9.99,
+            'category_id' => 6,
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
     }
 }

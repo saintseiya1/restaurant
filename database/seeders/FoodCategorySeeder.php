@@ -27,7 +27,7 @@ class FoodCategorySeeder extends Seeder
         DB::table('food_categories')->insert([
             'title' => 'burgers',
             'description' => 'Lorem ipsum dolor sit amet',
-            'image_url' => '/img/hamburger-and-fries-png-4.png',
+            'image_url' => '/img/hamburger.png',
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
@@ -35,7 +35,7 @@ class FoodCategorySeeder extends Seeder
         DB::table('food_categories')->insert([
             'title' => 'entrees',
             'description' => 'Lorem ipsum dolor sit amet',
-            'image_url' => '/img/chips.png',
+            'image_url' => '/img/ribs.png',
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
@@ -52,6 +52,14 @@ class FoodCategorySeeder extends Seeder
             'title' => 'deserts',
             'description' => 'Lorem ipsum dolor sit amet',
             'image_url' => '/img/cupcake.png',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_categories')->insert([
+            'title' => 'drinks',
+            'description' => 'Lorem ipsum dolor sit amet',
+            'image_url' => '/img/soda.png',
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
