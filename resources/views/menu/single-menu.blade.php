@@ -23,6 +23,7 @@
                                 <div class="description">
                                     <p>{{ $item->description }}</p>
                                 </div>
+                                <img width="100" height="100" src="{{ $item->image_url}}">
                             </div>
                         </div>
                         @endforeach
