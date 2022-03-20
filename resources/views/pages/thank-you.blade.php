@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Thank you!{{ $settings['general']->site_title }}  
+Thank you!{{ $settings['general']->site_title }}
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@ Thank you!{{ $settings['general']->site_title }}
     <div class="content-box">
         <div class="row">
             <div class="col-md-10 offset-md-1 thank-you">
-                <h1>Thank You</h1>
+                <h1>Thank You!</h1>
                 <p>We will get back to you.</p>
             </div>
         </div>

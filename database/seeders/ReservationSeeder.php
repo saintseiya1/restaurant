@@ -24,11 +24,8 @@ class ReservationSeeder extends Seeder
                 'phone_number' => $faker->phoneNumber,
                 'guests_total' => rand(1,5),
                 'time' => rand(6,10),
-                'updated_at' => '2022-03-18 03:30:42',
-                'created_at' => '2022-03-18 03:30:42'
-
-                // 'updated_at' => $faker->dateTimeThisMonth,
-                // 'created_at' => $faker->dateTimeThisMonth
+                'updated_at' => $faker->dateTimeThisMonth('now', 'America/Los_Angeles'),
+                'created_at' => $faker->dateTimeThisMonth('now', 'America/Los_Angeles')
             ]);
         }
     }

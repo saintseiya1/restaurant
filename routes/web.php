@@ -131,7 +131,7 @@ Route::get('/home',
 [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 View::composer(['home', 'pages/about', 'pages/contact', 'pages/offers',
-'pages/reservations', 'thank-you', 'menu/all-categories', 'menu/single-menu'
+'pages/reservations', 'pages/thank-you', 'menu/all-categories', 'menu/single-menu'
 ],
 function ($view) {
     $general_settings = GeneralSetting::find(1);
@@ -145,3 +145,7 @@ function ($view) {
     ]);
 });
 
+/*
+$response = Http::timeout(120)->get(...);
+USE THIS IF NEEDED
+*/
