@@ -41,8 +41,8 @@ class UsersTableSeeder extends Seeder
                 'lname' => $faker->lastName,
                 'email' => $faker->email,
                 'password' => Hash::make('12345678'),
-                'updated_at' => $faker->dateTimeThisMonth,
-                'created_at' => $faker->dateTimeThisMonth
+                'updated_at' => $faker->dateTimeThisMonth('now', 'America/Los_Angeles'),
+                'created_at' => $faker->dateTimeThisMonth('now', 'America/Los_Angeles')
             ]);
         }
     }

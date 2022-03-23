@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('title')
-{{ $settings['general']->site_title }} America's #1 Burgers
+    {{ $settings['general']->site_title }} America's #1 Burgers
 @endsection
 
 @section('content')

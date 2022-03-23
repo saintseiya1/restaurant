@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\GeneralSetting;
 use App\Models\SocialSetting;
 use App\Models\SeoSetting;
@@ -24,7 +23,7 @@ Route::get('/menu',
 Route::get('/menu/{slug}',
 'App\Http\Controllers\StaticPagesController@singleMenu');
 Route::get('/about',
-'App\Http\Controllers\StaticPagesController@about');
+'App\Http\Controllers\StaticPagesController@home');
 Route::get('/reservations',
 'App\Http\Controllers\StaticPagesController@reservations');
 Route::post('/reservations',
@@ -125,7 +124,7 @@ Route::get('/admin/login', function () {
     return view('admin/login');
 });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home',
 [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -134,6 +133,7 @@ View::composer(['home', 'pages/about', 'pages/contact', 'pages/offers',
 'pages/reservations', 'pages/thank-you', 'menu/all-categories', 'menu/single-menu'
 ],
 function ($view) {
+
     $general_settings = GeneralSetting::find(1);
     $social_settings = SocialSetting::find(1);
     $seo_settings = SeoSetting::find(1);
@@ -144,8 +144,3 @@ function ($view) {
         "seo" => $seo_settings
     ]);
 });
-
-/*
-$response = Http::timeout(120)->get(...);
-USE THIS IF NEEDED
-*/
