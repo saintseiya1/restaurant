@@ -72,7 +72,6 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    hello
                                     {{ $members->links() }}
 
                                 </div>
