@@ -23,7 +23,7 @@ Route::get('/menu',
 Route::get('/menu/{slug}',
 'App\Http\Controllers\StaticPagesController@singleMenu');
 Route::get('/about',
-'App\Http\Controllers\StaticPagesController@home');
+'App\Http\Controllers\StaticPagesController@about');
 Route::get('/reservations',
 'App\Http\Controllers\StaticPagesController@reservations');
 Route::post('/reservations',
@@ -44,7 +44,6 @@ Route::get('/admin',
 'App\Http\Controllers\admin\AdminController@dashboard');
 Route::get('/admin/estimated-revenue-daily',
 'App\Http\Controllers\admin\AdminController@dailyRevenueLast30');
-
 // Admin Food Categories
 Route::get('/admin/food-categories',
 'App\Http\Controllers\admin\FoodCategoriesController@index')->middleware('role:Admin');
@@ -124,7 +123,7 @@ Route::get('/admin/login', function () {
     return view('admin/login');
 });
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home',
 [App\Http\Controllers\HomeController::class, 'index'])->name('home');
